@@ -39,34 +39,6 @@ function addPfe($titre,$id_etd,$id_ens,$id_spec){
 $req->execute();
 }
 
-/*
-function getAllPfes(){
-    $tab=[];
-    $cnx=getConnexion();
-    $req=$cnx->query("select * from pfe");
-    $req->setFetchMode(PDO::FETCH_OBJ);
-    while($ligne=$req->fetch()){
-$tab[]=$ligne;
-    }
-    return $tab;
-}
-
-*/
-
-/*
-function addPfe($titre,$types,$ens,$etudiant){
-    $conn=getConnexion();
-    $req=$conn->prepare("INSERT INTO pfe (titre,pfe_type,id_etd,id_ens)
-        VALUES (?,(SELECT id_spec FROM types WHERE nom_type=?),
-               (SELECT id_ens FROM enseignant WHERE nom_ens=?),
-               (SELECT id_etd FROM etudiant WHERE nom_etd=?))");
-    $req->bindParam(1,$titre);
-    $req->bindParam(2,$types);
-    $req->bindParam(3,$ens);
-    $req->bindParam(4,$etudiant);
-    $req->execute();
-}
-*/
 function getAllPfes(){
     $tab=[];
     $cnx=getConnexion();
@@ -148,9 +120,6 @@ function getAllPfesBySpecId($id){
         }
         return $tab;
     }
-
-
-   
 
   
 function getNumAllPfes(){
